@@ -3,6 +3,8 @@ import json
 import sys
 
 from prefect import flow, task
+from prefect.deployments import Deployment
+
 from esridump import EsriDumper
 from pathlib import Path
 
@@ -42,6 +44,12 @@ def dump(path):
             f.write(json.dumps(feature))
             f.write('\n')
         f.close()
-    
+
+deployment = Deployment.build_from_flow(
+    flow=dump,
+    name="foreclosure-map",
+    requirements="pyproject.toml"  # Path to requirements file
+)
+
 if __name__ == "__main__":
     dump(Path("parcels.geojson"))
