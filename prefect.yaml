@@ -1,0 +1,14 @@
+# Welcome to your prefect.yaml file! You can use this file for storing and managing
+# configuration for deploying your flows. We recommend committing this file to source
+# control along with your flow code.
+
+pull:
+- prefect.deployments.steps.git_clone:
+    repository: https://github.com/prail/foreclosure-map.git
+    branch: main
+
+deployments:
+  - name: foreclosure-map
+    entrypoint: main.py:dump
+    parameters:
+        path: "parcels.geojson"
