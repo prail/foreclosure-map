@@ -12,3 +12,5 @@ deployments:
     entrypoint: main.py:dump
     parameters:
         path: "parcels.geojson"
+    dependencies:
+      pip: "-r requirements.txt"
