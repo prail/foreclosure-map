@@ -1,6 +1,3 @@
-import argparse
-import email.parser
-from six.moves import urllib
 import logging
 import json
 import sys
