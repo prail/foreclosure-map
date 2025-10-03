@@ -9,3 +9,10 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Data for now
+data/
+
+# JavaScript
+node_modules/
+dist/
