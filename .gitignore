@@ -16,3 +16,4 @@ data/
 # JavaScript
 node_modules/
 dist/
+.vscode/
